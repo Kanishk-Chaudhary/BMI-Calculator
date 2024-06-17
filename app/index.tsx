@@ -4,7 +4,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useState } from 'react';
 import 'react-native-gesture-handler';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 export default function HomeScreen() {
   const [bodyweight, setBodyweight] = useState("");
@@ -78,10 +78,10 @@ export default function HomeScreen() {
             <ThemedText style={styles.buttonText}>Calculate</ThemedText>
             </TouchableOpacity>
         <ThemedText type="subtitle">Your BMI Score is</ThemedText>
-        <view style={styles.resultView}>
+        <ThemedView style={styles.resultView}>
           <ThemedText style={styles.result}>{bmi}</ThemedText>
           <ThemedText style={styles.result}>{description}</ThemedText>
-        </view>
+        </ThemedView>
     </ParallaxScrollView>
   )
 };
