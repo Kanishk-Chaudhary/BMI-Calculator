@@ -22,10 +22,14 @@ export default function HomeScreen() {
 
         if(bmi < 18.5){
           setDescription('Underweight, eat more!')
-        }else if(bmi>=18.5 && bmi<=24.5){
+        }else if(bmi>=18.5 && bmi<=24.9){
           setDescription('Normal weight, keep it up!')
+        }else if(bmi>=25.0 && bmi<=29.9){
+          setDescription('Overweight, need exercise!')
+        }else if(bmi>=30.0 && bmi<=34.9){
+          setDescription('Obese, exercise more!')
         }else{
-          setDescription('Overweight, exercise more!')
+          setDescription('Extremly Obese, contact doctor!')
         }
 
     } else {
@@ -79,6 +83,10 @@ export default function HomeScreen() {
           <ThemedText style={styles.result}>BMI Score = {bmi}</ThemedText>
           <ThemedText style={styles.result}>{description}</ThemedText>
         </ThemedView>
+        {/* <Image
+          source={require('@/assets/images/meter.png')}
+          style={styles.meter}
+        /> */}
         <ThemedText style={styles.bottom}>Publish by Kanishk Chaudhary</ThemedText>
     </ParallaxScrollView>
   )
@@ -135,8 +143,11 @@ const styles = StyleSheet.create({
       color:'#ffffff',
       fontWeight:'bold',
     },
+    // meter:{
+
+    // },
     bottom:{
-      marginTop:120,
+      marginTop:130,
       textAlign:"center",
     },
 });
