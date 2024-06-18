@@ -17,8 +17,7 @@ export default function HomeScreen() {
     const Height = parseFloat(height as string);
 
     if (!isNaN(Bodyweight) && !isNaN(Height)) {
-      const height: number = Height / 100;
-      const bmi: number = Bodyweight / (height * height);
+      const bmi: number = Bodyweight / (Height * Height);
       setBmi(bmi.toFixed(1));
 
         if(bmi < 18.5){
@@ -50,18 +49,17 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.inputContainer}>
         <ThemedText type="subtitle">Enter your bodyweight in KG</ThemedText>
-        <SafeAreaView >
+        </ThemedView>    
         <TextInput
-        style={styles.input}
+                style={styles.input}
                 placeholder="Enter your body weight here"
                 value={bodyweight}
                 onChangeText={(text) => setBodyweight(text)}
                 keyboardType='numeric'
-            />
-            </SafeAreaView>
-            </ThemedView>
+            />            
             <ThemedView style={styles.inputContainer}>
         <ThemedText type="subtitle">Enter your height in meter</ThemedText>
+        </ThemedView>
 
         <TextInput
                 style={styles.input}
@@ -71,17 +69,17 @@ export default function HomeScreen() {
                 keyboardType='numeric'
             />
 
-            </ThemedView>
+            
             <TouchableOpacity
             style={styles.button}
             onPress={calculateBMI}>
             <ThemedText style={styles.buttonText}>Calculate</ThemedText>
             </TouchableOpacity>
-        <ThemedText type="subtitle">Your BMI Score is</ThemedText>
         <ThemedView style={styles.resultView}>
-          <ThemedText style={styles.result}>{bmi}</ThemedText>
+          <ThemedText style={styles.result}>BMI Score = {bmi}</ThemedText>
           <ThemedText style={styles.result}>{description}</ThemedText>
         </ThemedView>
+        <ThemedText style={styles.bottom}>Publish by Kanishk Chaudhary</ThemedText>
     </ParallaxScrollView>
   )
 };
@@ -90,9 +88,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  input: {
-    gap: 8,
-    marginBottom: 8,
+  input:{
+    flex: 1,
+        height:20,
+        width: 75,
+        borderRadius: 5,
+        backgroundColor: "#fff",
+        textDecorationColor: "#000000",
+        textAlign:"center",
+        justifyContent: "center",
   },
   reactLogo: {
     height: 250,
@@ -104,17 +108,17 @@ const styles = StyleSheet.create({
   inputContainer: {
         flex: 1,
         height:20,
-        width: 150,
-        borderRadius: 5,
-        backgroundColor: "#fff",
-        textDecorationColor: "#000",
+        width: 300,
+        textDecorationColor: "#ffffff",
         justifyContent: "center",
     },
     button:{
-      height:20,
-      width:10,
+      marginLeft:"35%",
+      marginTop:10,
+      height:25,
+      width:100,
       borderRadius:5,
-      backgroundColor:'#000',
+      backgroundColor:'#21662b',
       justifyContent:'center',
       alignItems:'center',
     },
@@ -124,10 +128,15 @@ const styles = StyleSheet.create({
       fontWeight:'bold',
     },
     resultView:{
-      margin:15,
+      margin:10,
     },
     result:{
-      fontSize:30,
-      color:'#2c',
+      fontSize:20,
+      color:'#ffffff',
+      fontWeight:'bold',
+    },
+    bottom:{
+      marginTop:120,
+      textAlign:"center",
     },
 });
