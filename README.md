@@ -23,4 +23,4 @@ In the output, you'll find options to open the app in a
 
 ## Output
 
-![Alt text](./assets/images/Output.png)
+![APP Output](@/assets/images/Output.png)
