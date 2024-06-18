@@ -83,10 +83,6 @@ export default function HomeScreen() {
           <ThemedText style={styles.result}>BMI Score = {bmi}</ThemedText>
           <ThemedText style={styles.result}>{description}</ThemedText>
         </ThemedView>
-        {/* <Image
-          source={require('@/assets/images/meter.png')}
-          style={styles.meter}
-        /> */}
         <ThemedText style={styles.bottom}>Publish by Kanishk Chaudhary</ThemedText>
     </ParallaxScrollView>
   )
@@ -143,9 +139,6 @@ const styles = StyleSheet.create({
       color:'#ffffff',
       fontWeight:'bold',
     },
-    // meter:{
-
-    // },
     bottom:{
       marginTop:130,
       textAlign:"center",
