@@ -23,4 +23,4 @@ In the output, you'll find options to open the app in a
 
 ## Output
 
-![APP Output](\assets\images\Output.jpg)
+![APP Output](.\assets\images\Output.jpg)
